@@ -1,5 +1,5 @@
 //Cria uma variável para manipilar um arquivo XML
-xmlhttp = XMLHttpRequest();
+xmlhttp = new XMLHttpRequest();
 //Lê um determinado arquivo XML no diretório do projeto
 xmlhttp.open("GET","xml/conteudo.xml",false);
 //Envia o arquivo aberto pra leitura
@@ -7,7 +7,19 @@ xmlhttp.send();
 //Envia uma resposta do tipo XML
 xmlDoc = xmlhttp.responseXML;
 //Cria um array a partir da quantidade de postagens
-x = getElementByTagName("postagem");
+x = xmlDoc.getElementsByTagName("postagem");
+
+function funcaoConteudo(){
+    for(i = 0; i<=2; i++){
+        document.write(
+        "<tr>"+
+        "<td>" + x[i].getAttribute("codigo") + "</td>" +
+        "<td> B </td>" +
+        "<td> C </td>" +
+        "<td> D </td>" +
+        "</tr>");
+    }
+}
 
 
 
