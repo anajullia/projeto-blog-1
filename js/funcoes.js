@@ -14,9 +14,9 @@ function funcaoConteudo(){
         document.write(
         "<tr>"+
         "<td>" + x[i].getAttribute("codigo") + "</td>" +
-        "<td> B </td>" +
-        "<td> C </td>" +
-        "<td> D </td>" +
+        "<td><img src='imgs/" + x[i].getElementsByTagName("imagem_1")[0].childNodes[0].nodeValue + "' width=150> </td>" +
+        "<td>" + x[i].getElementsByTagName("titulo")[0].childNodes[0].nodeValue + "</td>" +
+        "<td>" + x[i].getElementsByTagName("corpo")[0].childNodes[0].nodeValue.substr(0,150) +  "...</td>" +
         "</tr>");
     }
 }
